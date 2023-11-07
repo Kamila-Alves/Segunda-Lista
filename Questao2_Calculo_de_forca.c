@@ -40,7 +40,7 @@ float ForcaPonderada(Time time) {
         }
     }
 
-    return (8 * G + 10 * (L + L) + 5 * (Z + Z) + 8 * (V + V) + 11 * (M + M) + 12 * (A + A)) / 100;
+    return (8 * G + 10 * L + 5 * Z + 8 * V + 11 * M + 12 * A) / 100.0;
 }
 
 int main() {
@@ -58,6 +58,7 @@ int main() {
     fgets(nomeTime2, 100, stdin);
     nomeTime2[strcspn(nomeTime2, "\n")] = 0;
     strncpy(time2.nome, nomeTime2, sizeof(time2.nome) - 1);
+
     for (int i = 0; i < 11; i++) {
         scanf(" %[^;]; %c; %d%*c", time2.jogadores[i].nome, &time2.jogadores[i].posicao, &time2.jogadores[i].forca);
     }
