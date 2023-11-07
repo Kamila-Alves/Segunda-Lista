@@ -14,7 +14,7 @@ int main() {
     for (i = 0; i < tamanho; i++) {
         printf("%d", entrada[i]);
         if (i != tamanho - 1) {
-            printf("");
+            printf(" ");
         }
     }
     printf("\n");
