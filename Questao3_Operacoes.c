@@ -2,52 +2,52 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ROW 4
-#define COL 4
+#define POSI 4
+#define CART 4
 
-void MatrizLer(int matriz[ROW][COL]) {
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
+void MatrizLer(int matriz[POSI][CART]) {
+    for (int i = 0; i < POSI; i++) {
+        for (int j = 0; j < CART; j++) {
             scanf("%d", &matriz[i][j]);
         }
     }
 }
 
-void imprimir(int matriz[ROW][COL]) {
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
+void imprimir(int matriz[POSI][CART]) {
+    for (int i = 0; i < POSI; i++) {
+        for (int j = 0; j < CART; j++) {
             printf("%4d", matriz[i][j]);
         }
         printf("\n");
     }
 }
 
-void somar(int matrizA[ROW][COL], int matrizB[ROW][COL]) {
-    int resultado[ROW][COL];
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
+void somar(int matrizA[POSI][CART], int matrizB[POSI][CART]) {
+    int resultado[POSI][CART];
+    for (int i = 0; i < POSI; i++) {
+        for (int j = 0; j < CART; j++) {
             resultado[i][j] = matrizA[i][j] + matrizB[i][j];
         }
     }
     imprimir(resultado);
 }
 
-void subtrair(int matrizA[ROW][COL], int matrizB[ROW][COL]) {
-    int resultado[ROW][COL];
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
+void subtrair(int matrizA[POSI][CART], int matrizB[POSI][CART]) {
+    int resultado[POSI][CART];
+    for (int i = 0; i < POSI; i++) {
+        for (int j = 0; j < CART; j++) {
             resultado[i][j] = matrizA[i][j] - matrizB[i][j];
         }
     }
     imprimir(resultado);
 }
 
-void multiplicar(int matrizA[ROW][COL], int matrizB[ROW][COL]) {
-    int resultado[ROW][COL];
-    for (int i = 0; i < ROW; i++) {
-        for (int j = 0; j < COL; j++) {
+void multiplicar(int matrizA[POSI][CART], int matrizB[POSI][CART]) {
+    int resultado[POSI][CART];
+    for (int i = 0; i < POSI; i++) {
+        for (int j = 0; j < CART; j++) {
             resultado[i][j] = 0;
-            for (int k = 0; k < COL; k++) {
+            for (int k = 0; k < CART; k++) {
                 resultado[i][j] += matrizA[i][k] * matrizB[k][j];
             }
         }
@@ -56,8 +56,8 @@ void multiplicar(int matrizA[ROW][COL], int matrizB[ROW][COL]) {
 }
 
 int main() {
-    int matrizA[ROW][COL];
-    int matrizB[ROW][COL];
+    int matrizA[POSI][CART];
+    int matrizB[POSI][CART];
     char operacao[10];
 
     MatrizLer(matrizA);
